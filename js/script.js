@@ -53,4 +53,3 @@ for(var i in products) {
   console.log(products[i].description);
   console.log(products[i].price);
 }
-}
