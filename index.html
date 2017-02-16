@@ -9,19 +9,22 @@
   
   <script src="https://use.fontawesome.com/9578c16965.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
   <header>
+    <div class="logo">
+        <img src="images/logo-scarfcat.png">
+        <h1>Cozy-"Purr" <span>Winter Wear</span></h1>
+    </div>
     <nav>
       <ul>
         <li><a href="#">Hats</a></li>
         <li><a href="#">Gloves</a></li>
         <li><a href="#">Scarves</a></li>
-        <li class="cart-info"><i class="fa fa-shopping-cart" aria-hidden="true"></i></li>
+        <li class="cart-info"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></li>
       </ul>
     </nav>
-    
-    <h1>Winter Wear Warehouse</h1>
   </header>
   <aside>
     <form>
@@ -33,7 +36,14 @@
         </select>
       </label>
       <input type="submit" value="Sort">
+    </form> <br>
+    <form name="custInfo" onsubmit="capture();">
+    First name: <input type="text" name="fName"><br>
+    Last name: <input type="text" name="lName"><br>
+    Email: <input type="text" name="emailAddress"><br><br>
+    <input type="submit" value="Submit">
     </form>
+</form>
   </aside>
   <section>
     <h2>Scarves</h2>
@@ -42,23 +52,25 @@
         <h3 class="product-name">Reversible Plaid</h3>
         <img src="images/reversible-plaid.jpg" alt="reversible plaid scarf">
         <p class="description">Two classic patterns in one great look: This supersoft and cozy reversible scarf instantly doubles your street-style cred. 100% acrylic.</p>
-        <p class="price-text">26.99</p>
+        <p class="price-text">$26.99</p>
       </div>
       <div class="item">
         <h3 class="product-name">Wool Cable Knit</h3>
         <img src="images/wool-cable.jpeg" alt="wool cable scarf">
         <p class="description">Warm yourself with this women's natural cable knit scarf, crafted from 100% Merino wool. Imported.</p>
-        <p class="price-text">49.99</p>
+        <p class="price-text">$49.99</p>
       </div>
       <div class="item">
         <h3 class="product-name">Northern Lights</h3>
         <img src="images/northern-lights.jpg" alt="northern lights scarf">
         <p class="description">Handmade by women in Agra, sales provide medical and educational support in this remote area of India. Crinkly 100% cotton.</p>
-        <p class="price-text">29.99</p>
+        <p class="price-text">$29.99</p>
       </div>
     </div>
   </section>
-  
+  <footer>
+    &copy;2017 Cozy-"Purr" Winter Wear Co.
+  </footer>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

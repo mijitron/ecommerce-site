@@ -1,23 +1,146 @@
-.item-container {
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  background: rgba(50, 100, 200, .05);
+  color: black;
+}
+
+header {
+  background: rgba(50, 100, 200, .8);
+}
+section {
   width: 75%;
-  height: 15%;
+  height: 100%;
+  float: right;
+}
+aside {
+  width: 20%;
+  height: 100%;
+  height: inherit;
+  padding: 2.5%;
+  background: rgba(50, 100, 200, .25);
+  float: left;
+}
+.logo {
+  width: 95%;
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 2.5em;
+  color: black;
+}
+
+.logo img {
+  width: 10%;
+  padding: 2%;
+  min-width: 2em;
+  object-fit: contain;
+}
+
+.logo span {
+  font-size: 50%;
+}
+
+h2 {
+  margin: 1em 0;
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 2em;
+  text-align: center;
+}
+
+nav {
+  background: rgba(50, 100, 200, 1);
+}
+
+nav a {
+  font-size: 1em;
+  color: black;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+nav ul{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav ul li {
+  padding: .5em;
+}
+
+.item-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .item {
-  width: 29%;
-  padding: 1em;
+  margin: 1em auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 30%;
+  min-width: 30%;
+  max-height: 50%;
+  padding: 2em 0;
+  background: rgba(255,255,255,1);
 }
 .item-container h3 {
   font-family: 'Rubik Mono One', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.25em;
   text-align: center;
   height: 2em;
 }
 
 .item img {
+  margin-bottom: 1em;
   width: 100%;
-  height: 50%;
+  max-height: 300px;
   object-fit: contain;
+}
+p.description {
+  padding: 0 1em;
+  font-style: italic;
+  color: rgba(0, 0, 0, .75);
+}
+
+p.price-text {
+  font-size: 1.5em;
+  line-height: 2em;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .75);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  position: relative;
+  background: rgba(0,0,0, .8);
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .item-container {
+    width: 100%;
+    flex-direction: column;
+    }
+  .item {
+    width: 100%;
+    justify-content: center;
+  }
 }
