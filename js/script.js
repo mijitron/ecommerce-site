@@ -48,7 +48,7 @@ var products = [
     "imageTitle": "gray.jpg"
   }
 ]
-
+console.log(products.length);
 
 // To do: trigger on change of cart contents
 function sumPrices(cartArray) {
