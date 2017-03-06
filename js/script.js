@@ -32,7 +32,7 @@ var products = [
   {
     "name": "Multi Color",
     "price": 22.99,
-    "description": "The Who What Wear Oversize Color-Block Square Scarf is big, bold, and designed to twist and wrap any way you wish. All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff against cold AC and unexpected fall breezes. 100% acrylic",
+    "description": "The Who What Wear Oversize Color-Block Square Scarf is big, bold, and designed to twist and wrap any way you wish. All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff against cold AC and unexpected fall breezes. 100% acrylic.",
     "imageTitle": "multi-color.jpeg"
   },
   {
@@ -48,13 +48,29 @@ var products = [
     "imageTitle": "twill.jpg"
   }
 ]
-for(var i in products) {
-  console.log(products[i].name);
-  console.log(products[i].description);
-  console.log(products[i].price);
+
+// To do: trigger on change of cart contents
+function sumPrices(cartArray) {
+//for loop through array, sum value of price attribute for each object
+  var total = 0;
+  
+  for(var i=0; i < cartArray.length; i++){
+  
+    if(cartArray[i].price){   
+      total = total + cartArray[i].price;
+    }
+  }
+// To do: print total as HTML page, next to cart icon
+  console.log(total);
 }
 
-function capture(){
-  console.log(document.custInfo.name.value);
-  event.preventDefault();
-}
+//for(var i in products) {
+//  console.log(products[i].name);
+//  console.log(products[i].description);
+//  console.log(products[i].price);
+//}
+//
+//function capture(){
+//  console.log(document.custInfo.name.value);
+//  event.preventDefault();
+//}
