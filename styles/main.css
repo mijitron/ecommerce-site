@@ -4,7 +4,6 @@ html {
 }
 body {
   width: 100%;
-  height: 100%;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
   background: rgba(50, 100, 200, .05);
@@ -137,10 +136,19 @@ footer {
   color: white;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
+  aside {
+    width: 100%;
+    height: 1em;
+    padding: 2.5%;
+    background: rgba(50, 100, 200, .25);
+    float: left;
+  }
+  section {
+    width: 100%;
+  }
   .item-container {
     width: 100%;
-    flex-direction: column;
     }
   .item {
     width: 100%;
