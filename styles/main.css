@@ -13,16 +13,16 @@ body {
 header {
   background: rgba(50, 100, 200, .8);
 }
+
 section {
-  width: 75%;
-  height: 100%;
+  width: 70%;
+  margin: auto;
   float: right;
 }
 aside {
-  width: 20%;
-  height: 100%;
-  height: inherit;
-  padding: 2.5%;
+  width: 25%;
+  margin: auto;
+  padding: 2%;
   background: rgba(50, 100, 200, .25);
   float: left;
 }
@@ -68,29 +68,32 @@ nav a {
 
 nav ul{
   width: 100%;
+  padding: 1.5em;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
 }
 nav ul li {
-  padding: .5em;
+  padding-right: 1em;
+  font-size: 20px;
+}
+
+nav .glyphicon {
+  font-size: 2em;
 }
 
 .item-container {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .item {
   margin: 1em auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
   width: 30%;
   min-width: 30%;
   min-height: 4em;
@@ -109,31 +112,36 @@ nav ul li {
   margin-bottom: 1em;
   width: 100%;
   max-height: 300px;
-  object-fit: cover;
+  object-fit: contain;
 }
 p.description {
+  min-height: 100px;
   padding: 0 1em;
   font-style: italic;
   color: rgba(0, 0, 0, .75);
 }
 
 p.price-text {
-  margin: 1em 0;
+  width: 100%;
+  padding: .5em 0;
   font-size: 1.5em;
   font-weight: bold;
-  color: rgba(0, 0, 0, .75);
+  text-align: center;
+  background: rgba(50, 100, 200, .15);
 }
 
 footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  height: 3em;
+  padding: .5em;
   position: fixed;
   bottom: -1px;
   background: rgba(0,0,0, .8);
+  text-align: center;
   color: white;
+}
+.total {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 750px) {

@@ -7,7 +7,11 @@
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" href="styles/main.css">
   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  
   <script src="https://use.fontawesome.com/9578c16965.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  
   <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
@@ -22,100 +26,132 @@
         <li><a href="#">Hats</a></li>
         <li><a href="#">Gloves</a></li>
         <li><a href="#">Scarves</a></li>
-        <li class="cart-info"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i></li>
+        <li id = "cart-info">
+          <strong class="fa-stack-1x number-of-items-in-cart"></strong>
+        </span>
+        <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+        </li>
+      </div>
       </ul>
     </nav>
   </header>
   <aside>
-    <form name="sortBy" onsubmit="capture();">
-      <label class="filterBy">Filter By:
-        <select name="filter">
+    <form name="sortMe" onsubmit="sortProducts(event);">
+      <label for="sort">Sort By:</label>
+      <select name="sort" id="sort">
           <option value="">Choose One</option>
           <option value="price">Price</option>
           <option value="name">Name</option>
-        </select>
-      </label>
-      <button class="btn btn-primary btn-sm" type="submit">Sort</button>
+      </select>
+      <input type="submit" value="Sort">
     </form>
+    <div>
+      <h3><strong class="fa-stack-1x number-of-items-in-cart"></strong>
+        </span>
+        <i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i> Cart:</h3>
+      <ul id="show-cart">
+        <p>There are no items in your cart.</p>
+      </ul>
+      <br>
+      <div>You have <span id="count-cart">X</span> items in your cart.</div>
+      <div class="total">
+        Total Cost: $<span id="total-cart"></span></div>
+      <br>
+      <button id ="clear-cart">Clear Cart</button>
+    </div>
   </aside>
   <section>
-    <h2>Scarves</h2>
     <div class="item-container">
-      <div class="item">
-        <h3 class="product-name">Reversible Plaid</h3>
-        <img srcset="images/red-800.jpg 800w, images/red-400.jpg 400w, images/red-200w.jpg 200w"
-              sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
-              src="images/red.jpg"
-              alt="scarf">
-        <p class="description">Two classic patterns in one great look: This supersoft and cozy reversible scarf instantly doubles your street-style cred. 100% acrylic.</p>
-        <p class="price-text">$26.99</p>
-      </div>
-      <div class="item">
-        <h3 class="product-name">Wool Cable Knit</h3>
-        <img srcset="images/white-800.jpg 800w, images/white-400.jpg 400w, images/white-200w.jpg 200w"
-              sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
-              src="images/white.jpg"
-              alt="scarf">
-        <p class="description">Warm yourself with this women's natural cable knit scarf, crafted from 100% Merino wool. Imported.</p>
-        <p class="price-text">$49.99</p>
-      </div>
-      <div class="item">
-        <h3 class="product-name">Northern Lights</h3>
-        <img srcset="images/rainbow-800.jpg 800w, images/rainbow-400.jpg 400w, images/rainbow-200w.jpg 200w"
-              sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
-              src="images/rainbow.jpg"
-              alt="scarf">
-        <p class="description">Handmade by women in Agra, sales provide medical and educational support in this remote area of India. Crinkly 100% cotton.</p>
-        <p class="price-text">$29.99</p>
-      </div>
-      <div class="item">
-        <h3 class="product-name">Ombre Infinity</h3>
-        <img srcset="images/brown-800.jpg 800w, images/brown-400.jpg 400w, images/brown-200w.jpg 200w"
-              sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
-              src="images/brown.jpg"
-              alt="scarf">
-        <p class="description">A dip-dye effect adds color and dimension to a cozy infinity scarf featuring a soft, chunky knit. 100% acrylic.</p>
-        <p class="price-text">$11.99</p>
-      </div><div class="item">
-        <h3 class="product-name">Fringed Plaid</h3>
-        <img srcset="images/plaid-800.jpg 800w, images/plaid-400.jpg 400w, images/plaid-200w.jpg 200w"
-              sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
-              src="images/plaid.jpg"
-              alt="scarf">
-        <p class="description">Generously sized, extra soft and featuring a dazzling fringe, this scarf is rendered in a versatile gray, black and white plaid. Expertly beat the cold with style. 100% acrylic.</p>
-        <p class="price-text">$18.99</p>
-      </div>
-      <div class="item">
-        <h3 class="product-name">Multi Color</h3>
-        <img srcset="images/orange-800.jpg 800w, images/orange-400.jpg 400w, images/orange-200w.jpg 200w"
-              sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
-              src="images/orange.jpg"
-              alt="scarf">
-        <p class="description">All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff against cold AC and unexpected fall breezes. 100% acrylic.</p>
-        <p class="price-text">$22.99</p>
-      </div>
-      <div class="item">
-        <h3 class="product-name">Etro Paisley-Print Silk</h3>
-        <img srcset="images/blue-800.jpg 800w, images/blue-400.jpg 400w, images/blue-200w.jpg 200w"
-              sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
-              src="images/blue.jpg"
-              alt="scarf">
-        <p class="description">Luxurious silk scarf with subtle paisley pattern. 100% silk.</p>
-        <p class="price-text">$249.99</p>
-      </div>
-      <div class="item">
-        <h3 class="product-name">Ashby Twill</h3>
-        <img srcset="images/gray-800.jpg 800w, images/gray-400.jpg 400w, images/orange-200w.jpg 200w"
-              sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
-              src="images/gray.jpg"
-              alt="scarf">
-        <p class="description">Faribault brings you the Ashby Twill Scarf in Natural. Woven with a 'broken' twill technique, the Ashby Twill Scarf has a slight zigzag texture. Made in USA, this timeless scarf is crafted with luxurious merino wool and finished with heather gray fringe. 100% Merino wool.</p>
-        <p class="price-text">$70.99</p>
-      </div>
+    <div class="item">
+      <h3 class="product-name">Reversible Plaid</h3>
+      <img srcset="images/red-800.jpg 800w, images/red-400.jpg 400w, images/red-200.jpg 200w"
+            sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
+            src="images/red.jpg"
+            alt="scarf">
+      <p class="description">Two classic patterns in one great look: This supersoft and cozy reversible scarf instantly doubles your street-style cred. 100% acrylic.</p>
+      <p class="price-text">$26.99</p>
+      <button class="btn add-to-cart btn-info my-cart-btn" id="productName" data-name="Reversible Plaid" data-price="26.99" data-quantity="1" data-image="images/red.jpg">Add</button> &emsp;
+      <button class="btn remove-from-cart btn-default my-cart-btn" id="product1Remove" data-name="Reversible Plaid" data-price="26.99" data-quantity="1" data-image="images/red.jpg">Remove</button>
+    </div>
+    <div class="item">
+      <h3 class="product-name">Wool Cable Knit</h3>
+      <img srcset="images/white-800.jpg 800w, images/white-400.jpg 400w, images/white-200.jpg 200w"
+            sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
+            src="images/white.jpg"
+            alt="scarf">
+      <p class="description">Warm yourself with this women's natural cable knit scarf, crafted from 100% Merino wool. Imported.</p>
+      <p class="price-text">$49.99</p>
+      <button class="btn add-to-cart btn-info my-cart-btn" id="product2Add" data-name="Wool Knit" data-price="49.99" data-quantity="1" data-image="images/white.jpg">Add</button> &emsp;
+      <button class="btn remove-from-cart btn-default my-cart-btn" id="product2Remove" data-name="Wool Knit" data-price="49.99" data-quantity="1" data-image="images/white.jpg">Remove</button>
+    </div>
+    <div class="item">
+      <h3 class="product-name">Northern Lights</h3>
+      <img srcset="images/rainbow-800.jpg 800w, images/rainbow-400.jpg 400w, images/rainbow-200.jpg 200w"
+            sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
+            src="images/rainbow.jpg"
+            alt="scarf">
+      <p class="description">Handmade by women in Agra, sales provide medical and educational support in this remote area of India. Crinkly 100% cotton.</p>
+      <p class="price-text">$29.99</p>
+        <button class="btn add-to-cart btn-info my-cart-btn" id="product3Add" data-name="Northern Lights" data-price="29.99" data-quantity="1" data-image="images/rainbow.jpg">Add</button> &emsp;
+      <button class="btn remove-from-cart btn-default my-cart-btn" id="product2Remove" data-name="Northern Lights" data-price="29.99" data-quantity="1" data-image="images/rainbow.jpg">Remove</button>
+    </div>
+    <div class="item">
+      <h3 class="product-name">Ombre Infinity</h3>
+      <img srcset="images/brown-800.jpg 800w, images/brown-400.jpg 400w, images/brown-200.jpg 200w"
+            sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
+            src="images/brown.jpg"
+            alt="scarf">
+      <p class="description">A dip-dye effect adds color and dimension to a cozy infinity scarf featuring a soft, chunky knit. 100% acrylic.</p>
+      <p class="price-text">$11.99</p>
+      <button class="btn add-to-cart btn-info my-cart-btn" id="product4Add" data-name="Ombre Infinity" data-price="11.99" data-quantity="1" data-image="images/brown.jpg">Add</button> &emsp;
+      <button class="btn remove-from-cart btn-default my-cart-btn" id="product4Remove" data-name="Ombre Infinity" data-price="11.99" data-quantity="1" data-image="images/brown.jpg">Remove</button>
+    </div><div class="item">
+      <h3 class="product-name">Fringed Plaid</h3>
+      <img srcset="images/plaid-800.jpg 800w, images/plaid-400.jpg 400w, images/plaid-200.jpg 200w"
+            sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
+            src="images/plaid.jpg"
+            alt="scarf">
+      <p class="description">Generously sized, extra soft and featuring a dazzling fringe, this scarf is rendered in a versatile gray, black and white plaid. Expertly beat the cold with style. 100% acrylic.</p>
+      <p class="price-text">$18.99</p>
+      <button class="btn add-to-cart btn-info my-cart-btn" id="product5Add" data-name="Fringed Plaid" data-price="18.99" data-quantity="1" data-image="images/red.jpg">Add</button> &emsp;
+      <button class="btn remove-from-cart btn-default my-cart-btn" id="product5Remove" data-name="Fringed Plaid" data-price="18.99" data-quantity="1" data-image="images/red.jpg">Remove</button>
+    </div>
+    <div class="item">
+      <h3 class="product-name">Multi Color</h3>
+      <img srcset="images/orange-800.jpg 800w, images/orange-400.jpg 400w, images/orange-200.jpg 200w"
+            sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
+            src="images/orange.jpg"
+            alt="scarf">
+      <p class="description">All the colors of the season are harmonized in this oversize accent, so you can adjust to contrast or match your outfit; soft and lush, it’s your stylish standoff...</p>
+      <p class="price-text">$22.99</p>
+      <button class="btn add-to-cart btn-info my-cart-btn" id="product6Add" data-name="Multi Color" data-price="22.99" data-quantity="1" data-image="images/orange.jpg">Add</button> &emsp;
+      <button class="btn remove-from-cart btn-default my-cart-btn" id="product6Remove" data-name="Multi Color" data-price="22.99" data-quantity="1" data-image="images/orange.jpg">Remove</button>
+    </div>
+    <div class="item">
+      <h3 class="product-name">Etro Paisley-Print Silk</h3>
+      <img srcset="images/blue-800.jpg 800w, images/blue-400.jpg 400w, images/blue-200.jpg 200w"
+            sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
+            src="images/blue.jpg"
+            alt="scarf">
+      <p class="description">Luxurious silk scarf with subtle paisley pattern. 100% silk.</p>
+      <p class="price-text">$249.99</p>
+      <button class="btn add-to-cart btn-info my-cart-btn" id="product7Add" data-name="Etro Paisley-Print Silk" data-price="249.99" data-quantity="1" data-image="images/blue.jpg">Add</button> &emsp;
+      <button class="btn remove-from-cart btn-default my-cart-btn" id="product7Remove" data-name="Etro Paisley-Print Silk" data-price="249.99" data-quantity="1" data-image="images/blue.jpg">Remove</button>
+    </div>
+    <div class="item">
+      <h3 class="product-name">Ashby Twill</h3>
+      <img srcset="images/gray-800.jpg 800w, images/gray-400.jpg 400w, images/orange-200.jpg 200w"
+            sizes="(max-width: 800px) 200px, (max-width: 1600px) 400px, (min-width: 1601px) 800px"
+            src="images/gray.jpg"
+            alt="scarf">
+      <p class="description">Faribault brings you the Ashby Twill Scarf in Natural. Woven with a 'broken' twill technique, the Ashby Twill Scarf has a slight zigzag texture.</p>
+      <p class="price-text">$70.99</p>
+      <button class="btn add-to-cart btn-info my-cart-btn" id="product8Add" data-name="Ashby Twill" data-price="70.99" data-quantity="1" data-image="images/gray.jpg">Add</button> &emsp;
+      <button class="btn remove-from-cart btn-default my-cart-btn" id="product8Remove" data-name="Ashby Twill" data-price="70.99" data-quantity="1" data-image="images/gray.jpg">Remove</button>
     </div>
   </section>
   <footer>
-    &copy;2017 Cozy-"Purr" Winter Wear Co.
+    &copy; 2017 Cozy-"Purr" Winter Wear Co.
   </footer>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
