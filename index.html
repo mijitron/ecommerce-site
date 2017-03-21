@@ -8,13 +8,9 @@
   
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/main.css">
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
   
-<!--  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   
   <script src="https://use.fontawesome.com/9578c16965.js"></script>
   
@@ -34,29 +30,31 @@
         <li><a href="#">Scarves</a></li>
         <li id = "cart-info">
           <strong class="fa-stack-1x number-of-items-in-cart"></strong>
-        <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"> <span id="count-cart">X</span></i>
         </li>
       </ul>
     </nav>
   </header>
   <aside>
-    <form name="sortMe" onsubmit="sortProducts(event);">
-      <label for="sort">Sort By:</label>
-      <select name="sort" id="sort">
+    <form name= "filterBy" onsubmit="filterItems();">
+      <label>Filter By:
+        <select name="filter">
           <option value="">Choose One</option>
           <option value="price">Price</option>
           <option value="name">Name</option>
-      </select>
+        </select>
+      </label>
       <input type="submit" value="Sort">
     </form>
+    <br>
     <div>
       <h3><strong class="fa-stack-1x number-of-items-in-cart"></strong>
-        <i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i> Cart:</h3>
+        <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> Cart:</h3>
+        <br>
       <ul id="show-cart">
         <li>There are no items in your cart.</li>
       </ul>
       <br>
-      <div>You have <span id="count-cart">X</span> items in your cart.</div>
       <div class="total">
         Total Cost: $<span id="total-cart"></span></div>
       <br>

@@ -153,6 +153,41 @@ displayCart();
 var array = listCart();
 console.log(array);
 
+//***************************************************************************
+//SORT BY ATTRIBUTE
+function filterItems() {
+  var sortMethod = document.filterBy.filter.value;
+  if(sortMethod == "name") {
+    sortName();
+  }
+  else if (sortMethod == "price") {
+     { 
+      sortPrice();
+  } 
+}
+  event.preventDefault();
+}
+
+function sortName(){
+  products.sort(function(a,b){
+    if(a.name.toLowerCase() < b.name.toLowerCase())
+      return -1;
+    if(a.name.toLowerCase() > b.name.toLowerCase())
+      return 1;
+    return 0;
+  });
+  console.log(products);
+}
+
+function sortPrice(){
+  products.sort(function(a,b){
+    return a.price - b.price;
+});
+  console.log(products);
+}
+
+//***************************************************************************
+//OBJECTS
 var products = [
 //list each product as an object to be listed within the products array
   {

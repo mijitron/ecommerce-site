@@ -56,12 +56,13 @@ h2 {
 }
 
 nav {
+  padding-right: 1em;
   background: rgba(50, 100, 200, 1);
 }
 
 nav a {
   font-size: 1em;
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: bolder;
 }
@@ -80,7 +81,12 @@ nav ul li {
 }
 
 nav .glyphicon {
+  color: white;
   font-size: 2em;
+}
+
+nav i {
+  color: white;
 }
 
 .item-container {
@@ -142,6 +148,10 @@ footer {
 .total {
   font-size: 1.5em;
   font-weight: bold;
+}
+#count-cart {
+  font-size: 1em;
+  color: white;
 }
 
 @media only screen and (max-width: 750px) {
